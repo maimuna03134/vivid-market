@@ -1,0 +1,13 @@
+// Material Symbols icon (font is loaded in app/layout.jsx)
+// Usage: <Icon name="search" /> or <Icon name="star" filled className="text-sm" />
+export default function Icon({ name, filled = false, className = "" }) {
+    return (
+        <span
+            className={`material-symbols-outlined ${className}`}
+            style={filled ? { fontVariationSettings: "'FILL' 1" } : undefined}
+            aria-hidden="true"
+        >
+            {name}
+        </span>
+    );
+}
