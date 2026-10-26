@@ -4,9 +4,9 @@ export const HERO_IMAGE =
     "https://lh3.googleusercontent.com/aida-public/AB6AXuDDLy8R9homd2tnbnwPoA8FYcNkxgfkBQhnInYzb8E7tHmLHYzwz5h01YOq8TY4qeJ22L5UZT7XgLaqIpoE2OG0aMD5Irayu4Jfylb3PbLzJIqEyjRXSd-IeGR7Mg9RXXPQAG1KllHHCTxru1nTvKZ5y9GeJO-hpLkaOwY2Udr9p6SJFhinL4k_Rv-PCyO_nusc1CHeIkHuULp1m_XVI_CuixwIjMFNit-kVR-fb0gOWwiQMPe72MZj";
 
 export const categoryShortcuts = [
+    { name: "Home", slug: "home", icon: "home" },
     { name: "Electronics", slug: "electronics", icon: "devices" },
     { name: "Fashion", slug: "fashion", icon: "checkroom" },
-    { name: "Home", slug: "home", icon: "home" },
     { name: "Beauty", slug: "beauty", icon: "content_cut" },
     { name: "Gaming", slug: "gaming", icon: "sports_esports" },
     { name: "Sports", slug: "sports", icon: "fitness_center" },
