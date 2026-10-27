@@ -4,8 +4,10 @@ import { persist } from "zustand/middleware";
 export const useCartStore = create(
   persist(
     (set) => ({
-      items: [], // { id, name, price, image, qty }
+      items: [], // { id, productId, name, price, image, variant, qty }
 
+      // product.id is the cart line id (use a variant-specific id for variants),
+      // product.productId is the real product id (used for links)
       addItem: (product, qty = 1) =>
         set((state) => {
           const existing = state.items.find((i) => i.id === product.id);
@@ -21,9 +23,11 @@ export const useCartStore = create(
               ...state.items,
               {
                 id: product.id,
+                productId: product.productId || product.id,
                 name: product.name,
                 price: product.price,
                 image: product.image || null,
+                variant: product.variant || null,
                 qty
               }
             ]
