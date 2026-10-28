@@ -5,6 +5,7 @@ export const useCartStore = create(
   persist(
     (set) => ({
       items: [], // { id, productId, name, price, image, variant, qty }
+      coupon: null, // { code, type: "percent" | "fixed", value, label }
 
       // product.id is the cart line id (use a variant-specific id for variants),
       // product.productId is the real product id (used for links)
@@ -40,9 +41,16 @@ export const useCartStore = create(
         })),
 
       removeItem: (id) =>
-        set((state) => ({ items: state.items.filter((i) => i.id !== id) })),
+        set((state) => {
+          const items = state.items.filter((i) => i.id !== id);
+          // an empty cart should not keep a promo code
+          return { items, coupon: items.length ? state.coupon : null };
+        }),
 
-      clearCart: () => set({ items: [] })
+      setCoupon: (coupon) => set({ coupon }),
+      clearCoupon: () => set({ coupon: null }),
+
+      clearCart: () => set({ items: [], coupon: null })
     }),
     { name: "vivid-cart" }
   )
