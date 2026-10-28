@@ -6,7 +6,7 @@ import { useCartStore } from "@/store/cartStore";
 import { calcTotals, validateCoupon } from "@/lib/cart";
 import { toast } from "@/lib/toast";
 
-const money = (n) => `$${n.toFixed(2)}`;
+const money = (n) => `৳${n.toFixed(2)}`;
 
 // formId = the id of the <form> this "Place Order" button submits (the form is in the left column)
 export default function CheckoutSummary({ formId, submitting }) {

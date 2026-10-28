@@ -29,7 +29,7 @@ export function calcTotals(items, coupon) {
 // POST /api/coupons/validate  (same idea: send the code, get the coupon back or an error).
 const COUPONS = {
     VIVID10: { type: "percent", value: 10, label: "10% off" },
-    SAVE20: { type: "fixed", value: 20, label: "$20 off" }
+    SAVE20: { type: "fixed", value: 20, label: "৳20 off" }
 };
 
 export function validateCoupon(code) {

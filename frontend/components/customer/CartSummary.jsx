@@ -7,7 +7,7 @@ import { useCartStore } from "@/store/cartStore";
 import { calcTotals, validateCoupon } from "@/lib/cart";
 import { toast } from "@/lib/toast";
 
-const money = (n) => `$${n.toFixed(2)}`;
+const money = (n) => `৳${n.toFixed(2)}`;
 
 export default function CartSummary() {
     const items = useCartStore((s) => s.items);

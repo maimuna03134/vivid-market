@@ -121,7 +121,7 @@ export default function ProductFilters({ filters }) {
                 className="flex items-center gap-2"
               >
                 <div className="relative flex-1">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">$</span>
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">৳</span>
                   <input
                     type="number"
                     min="0"
@@ -134,7 +134,7 @@ export default function ProductFilters({ filters }) {
                 </div>
                 <span className="text-on-surface-variant">to</span>
                 <div className="relative flex-1">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">$</span>
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">৳</span>
                   <input
                     type="number"
                     min="0"
