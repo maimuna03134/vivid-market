@@ -133,7 +133,7 @@ export default function CheckoutView() {
                     <div className="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-lg text-left space-y-stack-sm mb-stack-lg">
                         <div className="flex justify-between text-body-md">
                             <span className="text-on-surface-variant">Total</span>
-                            <span className="font-bold text-primary">${placedOrder.totals.total.toFixed(2)}</span>
+                            <span className="font-bold text-primary">৳{placedOrder.totals.total.toFixed(2)}</span>
                         </div>
                         <div className="flex justify-between text-body-md">
                             <span className="text-on-surface-variant">Payment</span>

@@ -78,10 +78,10 @@ export default function ProductListCard({ product }) {
                     <span className="text-xs text-on-surface-variant">({product.reviews})</span>
                 </div>
                 <div className="flex items-baseline gap-3">
-                    <span className="text-price-lg text-primary-container">${product.price.toFixed(2)}</span>
+                    <span className="text-price-lg text-primary-container">৳{product.price.toFixed(2)}</span>
                     {product.oldPrice && (
                         <span className="text-sm text-on-surface-variant line-through decoration-primary-container/30">
-                            ${product.oldPrice.toFixed(2)}
+                            ৳{product.oldPrice.toFixed(2)}
                         </span>
                     )}
                 </div>

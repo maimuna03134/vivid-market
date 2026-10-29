@@ -33,7 +33,7 @@ export default function RecommendedProducts({ products }) {
                         </div>
                         <div className="p-stack-md space-y-stack-xs">
                             <div className="font-bold text-body-md line-clamp-2">{p.name}</div>
-                            <div className="text-primary font-bold text-body-lg">${p.price.toFixed(2)}</div>
+                            <div className="text-primary font-bold text-body-lg">৳{p.price.toFixed(2)}</div>
                             <div className="flex items-center gap-1 text-yellow-500">
                                 <Icon name="star" filled className="text-label-md" />
                                 <span className="text-label-md text-on-surface-variant font-normal">

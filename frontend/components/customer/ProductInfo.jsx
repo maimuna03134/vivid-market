@@ -60,11 +60,11 @@ export default function ProductInfo({ product }) {
 
             <div className="flex items-baseline gap-stack-sm">
                 <span className="font-bold text-primary text-headline-lg md:text-display-lg">
-                    ${product.price.toFixed(2)}
+                    ৳{product.price.toFixed(2)}
                 </span>
                 {product.oldPrice && (
                     <span className="text-on-surface-variant line-through text-body-lg">
-                        ${product.oldPrice.toFixed(2)}
+                        ৳{product.oldPrice.toFixed(2)}
                     </span>
                 )}
             </div>

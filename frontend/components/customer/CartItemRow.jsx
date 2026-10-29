@@ -46,10 +46,10 @@ export default function CartItemRow({ item }) {
               </h3>
             </Link>
             <div className="text-right flex-shrink-0">
-              <span className="text-price-lg text-primary">${item.price.toFixed(2)}</span>
+              <span className="text-price-lg text-primary">৳{item.price.toFixed(2)}</span>
               {item.qty > 1 && (
                 <p className="text-label-md text-on-surface-variant mt-1">
-                  ${(item.price * item.qty).toFixed(2)} total
+                  ৳{(item.price * item.qty).toFixed(2)} total
                 </p>
               )}
             </div>

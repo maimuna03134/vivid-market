@@ -59,9 +59,9 @@ export default function FlashSaleSection() {
             <div className="p-4 space-y-2">
               <h3 className="text-body-md text-on-secondary-fixed line-clamp-1">{p.name}</h3>
               <div className="flex items-baseline gap-2">
-                <span className="text-primary font-bold text-lg">${p.price.toFixed(2)}</span>
+                <span className="text-primary font-bold text-lg">৳{p.price.toFixed(2)}</span>
                 <span className="text-secondary opacity-50 line-through text-sm">
-                  ${p.oldPrice.toFixed(2)}
+                  ৳{p.oldPrice.toFixed(2)}
                 </span>
               </div>
             </div>
