@@ -5,18 +5,18 @@ import { headphoneGallery, recommendedProducts } from "@/constants/mockProductDe
 const [keyboard, mouse, speaker, backpack, strip] = flashSaleProducts;
 
 export const mockSellerProducts = [
-    { id: "sp-1", name: "Nebula Pro 5G", sku: "NEB-5G-2024", category: "Electronics", price: 899.0, stock: 42, status: "approved", image: null },
-    { id: "sp-2", name: "SonicBoom ANC Headphones", sku: "SB-AUDIO-BLK", category: "Electronics", price: 249.5, stock: 8, status: "pending", image: headphoneGallery[0] },
-    { id: "sp-3", name: "Urban Leather Satchel", sku: "LTHR-ST-BRW", category: "Fashion", price: 125.0, stock: 156, status: "rejected", image: backpack.image },
-    { id: "sp-4", name: "CoreClick RGB Keyboard", sku: "KB-CORE-RGB", category: "Electronics", price: 159.99, stock: 15, status: "approved", image: keyboard.image },
-    { id: "sp-5", name: "Precision Wireless Mouse", sku: "MS-PREC-WL", category: "Electronics", price: 49.99, stock: 0, status: "approved", image: mouse.image },
-    { id: "sp-6", name: "Sonic Boom Portable Speaker", sku: "SP-BOOM-ORG", category: "Electronics", price: 89.0, stock: 64, status: "approved", image: speaker.image },
-    { id: "sp-7", name: "Smart Aura LED Strip", sku: "LED-AURA-PRO", category: "Home & Living", price: 25.0, stock: 230, status: "approved", image: strip.image },
-    { id: "sp-8", name: "Vivid Buds Active White", sku: "EB-VIVID-WHT", category: "Electronics", price: 129.0, stock: 5, status: "pending", image: recommendedProducts[0].image },
-    { id: "sp-9", name: "Studio Condenser Mic", sku: "MIC-STU-01", category: "Electronics", price: 199.0, stock: 27, status: "approved", image: recommendedProducts[2].image },
-    { id: "sp-10", name: "Ergonomic Desk Chair", sku: "CH-ERGO-GRY", category: "Home & Living", price: 299.0, stock: 12, status: "approved", image: null },
-    { id: "sp-11", name: "Canvas Weekender Bag", sku: "BAG-CNV-TAN", category: "Fashion", price: 79.5, stock: 88, status: "pending", image: null },
-    { id: "sp-12", name: "Ceramic Pour-Over Set", sku: "KIT-POUR-WHT", category: "Kitchen & Dining", price: 54.0, stock: 0, status: "approved", image: null },
-    { id: "sp-13", name: "Trail Running Shoes", sku: "SH-TRAIL-GRN", category: "Sports & Outdoors", price: 110.0, stock: 73, status: "approved", image: null },
-    { id: "sp-14", name: "Vitamin C Face Serum", sku: "BEA-VITC-30", category: "Beauty & Care", price: 32.5, stock: 310, status: "rejected", image: null }
+    { id: "sp-1", description: "A powerful 5G-ready smartphone with a vivid display, all-day battery life and a pro-grade camera system.", name: "Nebula Pro 5G", sku: "NEB-5G-2024", category: "Electronics", price: 899.0, stock: 42, status: "approved", image: null },
+    { id: "sp-2", description: "Active noise cancelling over-ear headphones with deep bass, 30-hour battery life and a foldable design.", name: "SonicBoom ANC Headphones", sku: "SB-AUDIO-BLK", category: "Electronics", price: 249.5, stock: 8, status: "pending", image: headphoneGallery[0] },
+    { id: "sp-3", description: "A handcrafted leather satchel with a padded laptop sleeve, brass hardware and an adjustable shoulder strap.", name: "Urban Leather Satchel", sku: "LTHR-ST-BRW", category: "Fashion", price: 125.0, stock: 156, status: "rejected", image: backpack.image },
+    { id: "sp-4", description: "A full-size mechanical keyboard with per-key RGB lighting, hot-swappable switches and a durable aluminum frame.", name: "CoreClick RGB Keyboard", sku: "KB-CORE-RGB", category: "Electronics", price: 159.99, stock: 15, status: "approved", image: keyboard.image },
+    { id: "sp-5", description: "A precision wireless mouse with adjustable DPI, silent clicks and up to 6 months of battery life on a single charge.", name: "Precision Wireless Mouse", sku: "MS-PREC-WL", category: "Electronics", price: 49.99, stock: 0, status: "approved", image: mouse.image },
+    { id: "sp-6", description: "A portable Bluetooth speaker with rich, room-filling sound, IPX5 water resistance and 12 hours of playtime.", name: "Sonic Boom Portable Speaker", sku: "SP-BOOM-ORG", category: "Electronics", price: 89.0, stock: 64, status: "approved", image: speaker.image },
+    { id: "sp-7", description: "An adhesive-backed LED light strip with app-controlled colors, music sync and easy peel-and-stick installation.", name: "Smart Aura LED Strip", sku: "LED-AURA-PRO", category: "Home & Living", price: 25.0, stock: 230, status: "approved", image: strip.image },
+    { id: "sp-8", description: "True wireless earbuds with active noise cancellation, touch controls and a compact charging case.", name: "Vivid Buds Active White", sku: "EB-VIVID-WHT", category: "Electronics", price: 129.0, stock: 5, status: "pending", image: recommendedProducts[0].image },
+    { id: "sp-9", description: "A USB condenser microphone with a cardioid pickup pattern, built-in pop filter and plug-and-play setup.", name: "Studio Condenser Mic", sku: "MIC-STU-01", category: "Electronics", price: 199.0, stock: 27, status: "approved", image: recommendedProducts[2].image },
+    { id: "sp-10", description: "An ergonomic mesh desk chair with adjustable lumbar support, armrests and a smooth-rolling base.", name: "Ergonomic Desk Chair", sku: "CH-ERGO-GRY", category: "Home & Living", price: 299.0, stock: 12, status: "approved", image: null },
+    { id: "sp-11", description: "A durable canvas weekender bag with a spacious main compartment and reinforced leather handles.", name: "Canvas Weekender Bag", sku: "BAG-CNV-TAN", category: "Fashion", price: 79.5, stock: 88, status: "pending", image: null },
+    { id: "sp-12", description: "A ceramic pour-over coffee set including a dripper, carafe and reusable filter for a smooth, rich brew.", name: "Ceramic Pour-Over Set", sku: "KIT-POUR-WHT", category: "Kitchen & Dining", price: 54.0, stock: 0, status: "approved", image: null },
+    { id: "sp-13", description: "Lightweight trail running shoes with a grippy outsole, breathable mesh upper and cushioned midsole.", name: "Trail Running Shoes", sku: "SH-TRAIL-GRN", category: "Sports & Outdoors", price: 110.0, stock: 73, status: "approved", image: null },
+    { id: "sp-14", description: "A vitamin C face serum that brightens skin tone, fades dark spots and boosts collagen over time.", name: "Vitamin C Face Serum", sku: "BEA-VITC-30", category: "Beauty & Care", price: 32.5, stock: 310, status: "rejected", image: null }
 ];
