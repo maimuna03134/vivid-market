@@ -1,4 +1,6 @@
+import AdminShell from "@/components/admin/AdminShell";
+
 // admin sidebar + topbar wrapper
 export default function AdminLayout({ children }) {
-  return <div>{children}</div>;
+  return <AdminShell>{children}</AdminShell>;
 }

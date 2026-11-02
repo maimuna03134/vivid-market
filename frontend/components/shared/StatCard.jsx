@@ -2,7 +2,8 @@ import Icon from "@/components/ui/Icon";
 
 // Generic stat card used by seller/admin dashboards.
 // trend = { value: "+12%", positive: true } (optional — omit for cards with no trend)
-export default function StatCard({ icon, iconBg, iconColor, label, value, trend }) {
+// progress = { value: 75, color: "bg-primary" } (optional — a thin bar under the value)
+export default function StatCard({ icon, iconBg, iconColor, label, value, trend, progress }) {
   return (
     <div className="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(26,26,46,0.08)] hover:-translate-y-1 transition-transform group">
       <div className="flex justify-between items-start mb-4">
@@ -21,6 +22,14 @@ export default function StatCard({ icon, iconBg, iconColor, label, value, trend 
       </div>
       <p className="text-on-surface-variant text-label-md mb-1 uppercase tracking-wider">{label}</p>
       <h3 className="text-price-lg text-on-surface">{value}</h3>
+      {progress && (
+        <div className="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+          <div
+            className={`h-full rounded-full ${progress.color}`}
+            style={{ width: `${Math.max(0, Math.min(100, progress.value))}%` }}
+          />
+        </div>
+      )}
     </div>
   );
 }
