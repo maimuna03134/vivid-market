@@ -1,0 +1,242 @@
+# ============================================================
+# Vivid Market frontend reorg script
+# Run from the frontend/ folder in PowerShell
+# ============================================================
+
+# --- Step 1: create new folders ---
+New-Item -ItemType Directory -Force -Path "components\admin\dashboard" | Out-Null
+New-Item -ItemType Directory -Force -Path "components\admin\layout" | Out-Null
+New-Item -ItemType Directory -Force -Path "components\admin\products" | Out-Null
+New-Item -ItemType Directory -Force -Path "components\admin\users" | Out-Null
+New-Item -ItemType Directory -Force -Path "components\customer\cart" | Out-Null
+New-Item -ItemType Directory -Force -Path "components\customer\checkout" | Out-Null
+New-Item -ItemType Directory -Force -Path "components\customer\home" | Out-Null
+New-Item -ItemType Directory -Force -Path "components\customer\orders" | Out-Null
+New-Item -ItemType Directory -Force -Path "components\customer\product-details" | Out-Null
+New-Item -ItemType Directory -Force -Path "components\customer\products" | Out-Null
+New-Item -ItemType Directory -Force -Path "components\customer\profile" | Out-Null
+New-Item -ItemType Directory -Force -Path "components\seller\dashboard" | Out-Null
+New-Item -ItemType Directory -Force -Path "components\seller\layout" | Out-Null
+New-Item -ItemType Directory -Force -Path "components\seller\orders" | Out-Null
+New-Item -ItemType Directory -Force -Path "components\seller\payouts" | Out-Null
+New-Item -ItemType Directory -Force -Path "components\seller\products" | Out-Null
+New-Item -ItemType Directory -Force -Path "constants\admin" | Out-Null
+New-Item -ItemType Directory -Force -Path "constants\customer" | Out-Null
+New-Item -ItemType Directory -Force -Path "constants\seller" | Out-Null
+New-Item -ItemType Directory -Force -Path "lib\admin" | Out-Null
+New-Item -ItemType Directory -Force -Path "lib\customer" | Out-Null
+New-Item -ItemType Directory -Force -Path "lib\seller" | Out-Null
+New-Item -ItemType Directory -Force -Path "store" | Out-Null
+New-Item -ItemType Directory -Force -Path "store\admin" | Out-Null
+New-Item -ItemType Directory -Force -Path "store\customer" | Out-Null
+New-Item -ItemType Directory -Force -Path "store\seller" | Out-Null
+
+# --- Step 2: move files to their new locations ---
+Move-Item -Path "components\customer\CategoryBar.jsx" -Destination "components\customer\home\CategoryBar.jsx" -Force
+Move-Item -Path "components\customer\HeroBanner.jsx" -Destination "components\customer\home\HeroBanner.jsx" -Force
+Move-Item -Path "components\customer\FlashSaleSection.jsx" -Destination "components\customer\home\FlashSaleSection.jsx" -Force
+Move-Item -Path "components\customer\CategoryGrid.jsx" -Destination "components\customer\home\CategoryGrid.jsx" -Force
+Move-Item -Path "components\customer\ProductFilters.jsx" -Destination "components\customer\products\ProductFilters.jsx" -Force
+Move-Item -Path "components\customer\ProductSort.jsx" -Destination "components\customer\products\ProductSort.jsx" -Force
+Move-Item -Path "components\customer\ProductListCard.jsx" -Destination "components\customer\products\ProductListCard.jsx" -Force
+Move-Item -Path "components\customer\Pagination.jsx" -Destination "components\customer\products\Pagination.jsx" -Force
+Move-Item -Path "components\customer\ProductGallery.jsx" -Destination "components\customer\product-details\ProductGallery.jsx" -Force
+Move-Item -Path "components\customer\ProductInfo.jsx" -Destination "components\customer\product-details\ProductInfo.jsx" -Force
+Move-Item -Path "components\customer\ProductTabs.jsx" -Destination "components\customer\product-details\ProductTabs.jsx" -Force
+Move-Item -Path "components\customer\RecommendedProducts.jsx" -Destination "components\customer\product-details\RecommendedProducts.jsx" -Force
+Move-Item -Path "components\customer\ReviewCard.jsx" -Destination "components\customer\product-details\ReviewCard.jsx" -Force
+Move-Item -Path "components\customer\CartItemRow.jsx" -Destination "components\customer\cart\CartItemRow.jsx" -Force
+Move-Item -Path "components\customer\CartSummary.jsx" -Destination "components\customer\cart\CartSummary.jsx" -Force
+Move-Item -Path "components\customer\CartView.jsx" -Destination "components\customer\cart\CartView.jsx" -Force
+Move-Item -Path "components\customer\CheckoutStepper.jsx" -Destination "components\customer\checkout\CheckoutStepper.jsx" -Force
+Move-Item -Path "components\customer\CheckoutSummary.jsx" -Destination "components\customer\checkout\CheckoutSummary.jsx" -Force
+Move-Item -Path "components\customer\CheckoutView.jsx" -Destination "components\customer\checkout\CheckoutView.jsx" -Force
+Move-Item -Path "components\customer\OrderCard.jsx" -Destination "components\customer\orders\OrderCard.jsx" -Force
+Move-Item -Path "components\customer\OrdersView.jsx" -Destination "components\customer\orders\OrdersView.jsx" -Force
+Move-Item -Path "components\customer\ProfileSidebar.jsx" -Destination "components\customer\profile\ProfileSidebar.jsx" -Force
+Move-Item -Path "components\customer\ProfileInfoForm.jsx" -Destination "components\customer\profile\ProfileInfoForm.jsx" -Force
+Move-Item -Path "components\customer\AddressCard.jsx" -Destination "components\customer\profile\AddressCard.jsx" -Force
+Move-Item -Path "components\customer\AddressFormModal.jsx" -Destination "components\customer\profile\AddressFormModal.jsx" -Force
+Move-Item -Path "components\customer\ProfileView.jsx" -Destination "components\customer\profile\ProfileView.jsx" -Force
+Move-Item -Path "components\seller\SellerSidebar.jsx" -Destination "components\seller\layout\SellerSidebar.jsx" -Force
+Move-Item -Path "components\seller\SellerTopbar.jsx" -Destination "components\seller\layout\SellerTopbar.jsx" -Force
+Move-Item -Path "components\seller\SellerShell.jsx" -Destination "components\seller\layout\SellerShell.jsx" -Force
+Move-Item -Path "components\seller\DashboardOverview.jsx" -Destination "components\seller\dashboard\DashboardOverview.jsx" -Force
+Move-Item -Path "components\seller\SalesChart.jsx" -Destination "components\seller\dashboard\SalesChart.jsx" -Force
+Move-Item -Path "components\seller\RecentOrdersTable.jsx" -Destination "components\seller\dashboard\RecentOrdersTable.jsx" -Force
+Move-Item -Path "components\seller\ProductsTable.jsx" -Destination "components\seller\products\ProductsTable.jsx" -Force
+Move-Item -Path "components\seller\MyProductsView.jsx" -Destination "components\seller\products\MyProductsView.jsx" -Force
+Move-Item -Path "components\seller\ProductForm.jsx" -Destination "components\seller\products\ProductForm.jsx" -Force
+Move-Item -Path "components\seller\ProductMediaUploader.jsx" -Destination "components\seller\products\ProductMediaUploader.jsx" -Force
+Move-Item -Path "components\seller\ProductVariants.jsx" -Destination "components\seller\products\ProductVariants.jsx" -Force
+Move-Item -Path "components\seller\OrdersTable.jsx" -Destination "components\seller\orders\OrdersTable.jsx" -Force
+Move-Item -Path "components\seller\OrderStatusSelect.jsx" -Destination "components\seller\orders\OrderStatusSelect.jsx" -Force
+Move-Item -Path "components\seller\OrderDetailsModal.jsx" -Destination "components\seller\orders\OrderDetailsModal.jsx" -Force
+Move-Item -Path "components\seller\OrderManagementView.jsx" -Destination "components\seller\orders\OrderManagementView.jsx" -Force
+Move-Item -Path "components\seller\PayoutHistoryTable.jsx" -Destination "components\seller\payouts\PayoutHistoryTable.jsx" -Force
+Move-Item -Path "components\seller\RequestPayoutModal.jsx" -Destination "components\seller\payouts\RequestPayoutModal.jsx" -Force
+Move-Item -Path "components\seller\PayoutsView.jsx" -Destination "components\seller\payouts\PayoutsView.jsx" -Force
+Move-Item -Path "components\admin\AdminSidebar.jsx" -Destination "components\admin\layout\AdminSidebar.jsx" -Force
+Move-Item -Path "components\admin\AdminTopbar.jsx" -Destination "components\admin\layout\AdminTopbar.jsx" -Force
+Move-Item -Path "components\admin\AdminShell.jsx" -Destination "components\admin\layout\AdminShell.jsx" -Force
+Move-Item -Path "components\admin\AdminDashboardOverview.jsx" -Destination "components\admin\dashboard\AdminDashboardOverview.jsx" -Force
+Move-Item -Path "components\admin\RevenueBarChart.jsx" -Destination "components\admin\dashboard\RevenueBarChart.jsx" -Force
+Move-Item -Path "components\admin\OrdersDonutChart.jsx" -Destination "components\admin\dashboard\OrdersDonutChart.jsx" -Force
+Move-Item -Path "components\admin\RecentTransactionsTable.jsx" -Destination "components\admin\dashboard\RecentTransactionsTable.jsx" -Force
+Move-Item -Path "components\admin\ProductApprovalCard.jsx" -Destination "components\admin\products\ProductApprovalCard.jsx" -Force
+Move-Item -Path "components\admin\ProductApprovalModal.jsx" -Destination "components\admin\products\ProductApprovalModal.jsx" -Force
+Move-Item -Path "components\admin\ProductApprovalView.jsx" -Destination "components\admin\products\ProductApprovalView.jsx" -Force
+Move-Item -Path "components\admin\UsersTable.jsx" -Destination "components\admin\users\UsersTable.jsx" -Force
+Move-Item -Path "components\admin\UserDetailsModal.jsx" -Destination "components\admin\users\UserDetailsModal.jsx" -Force
+Move-Item -Path "components\admin\UserManagementView.jsx" -Destination "components\admin\users\UserManagementView.jsx" -Force
+Move-Item -Path "lib\cart.js" -Destination "lib\customer\cart.js" -Force
+Move-Item -Path "lib\checkout.js" -Destination "lib\customer\checkout.js" -Force
+Move-Item -Path "lib\orders.js" -Destination "lib\customer\orders.js" -Force
+Move-Item -Path "lib\productDetails.js" -Destination "lib\customer\productDetails.js" -Force
+Move-Item -Path "lib\productQuery.js" -Destination "lib\customer\productQuery.js" -Force
+Move-Item -Path "lib\products.js" -Destination "lib\customer\products.js" -Force
+Move-Item -Path "lib\profile.js" -Destination "lib\customer\profile.js" -Force
+Move-Item -Path "lib\sellerOrders.js" -Destination "lib\seller\orders.js" -Force
+Move-Item -Path "lib\sellerProductForm.js" -Destination "lib\seller\productForm.js" -Force
+Move-Item -Path "lib\sellerProducts.js" -Destination "lib\seller\products.js" -Force
+Move-Item -Path "lib\payouts.js" -Destination "lib\seller\payouts.js" -Force
+Move-Item -Path "lib\adminDashboard.js" -Destination "lib\admin\dashboard.js" -Force
+Move-Item -Path "lib\adminProducts.js" -Destination "lib\admin\products.js" -Force
+Move-Item -Path "lib\adminUsers.js" -Destination "lib\admin\users.js" -Force
+Move-Item -Path "constants\mockData.js" -Destination "constants\customer\home.js" -Force
+Move-Item -Path "constants\mockProducts.js" -Destination "constants\customer\products.js" -Force
+Move-Item -Path "constants\mockProductDetails.js" -Destination "constants\customer\productDetails.js" -Force
+Move-Item -Path "constants\mockOrders.js" -Destination "constants\customer\orders.js" -Force
+Move-Item -Path "constants\mockProfile.js" -Destination "constants\customer\profile.js" -Force
+Move-Item -Path "constants\mockSeller.js" -Destination "constants\seller\dashboard.js" -Force
+Move-Item -Path "constants\mockSellerProducts.js" -Destination "constants\seller\products.js" -Force
+Move-Item -Path "constants\mockSellerOrders.js" -Destination "constants\seller\orders.js" -Force
+Move-Item -Path "constants\mockPayouts.js" -Destination "constants\seller\payouts.js" -Force
+Move-Item -Path "constants\mockAdmin.js" -Destination "constants\admin\dashboard.js" -Force
+Move-Item -Path "constants\mockAdminUsers.js" -Destination "constants\admin\users.js" -Force
+Move-Item -Path "store\cartStore.js" -Destination "store\customer\cartStore.js" -Force
+Move-Item -Path "store\orderStore.js" -Destination "store\customer\orderStore.js" -Force
+Move-Item -Path "store\profileStore.js" -Destination "store\customer\profileStore.js" -Force
+Move-Item -Path "store\sellerOrderStore.js" -Destination "store\seller\orderStore.js" -Force
+Move-Item -Path "store\sellerPayoutStore.js" -Destination "store\seller\payoutStore.js" -Force
+Move-Item -Path "store\adminUserStore.js" -Destination "store\admin\userStore.js" -Force
+Move-Item -Path "store\sellerProductStore.js" -Destination "store\productStore.js" -Force
+
+# --- Step 3: delete unused stub files (never implemented) ---
+Remove-Item -Path "components\admin\DisputeDetailPanel.jsx" -ErrorAction SilentlyContinue
+Remove-Item -Path "components\admin\OrdersByStatusChart.jsx" -ErrorAction SilentlyContinue
+Remove-Item -Path "components\admin\RevenueChart.jsx" -ErrorAction SilentlyContinue
+Remove-Item -Path "components\seller\ProductVariantBuilder.jsx" -ErrorAction SilentlyContinue
+Remove-Item -Path "components\ui\Badge.jsx" -ErrorAction SilentlyContinue
+Remove-Item -Path "components\ui\Button.jsx" -ErrorAction SilentlyContinue
+Remove-Item -Path "components\ui\Input.jsx" -ErrorAction SilentlyContinue
+Remove-Item -Path "components\ui\Modal.jsx" -ErrorAction SilentlyContinue
+Remove-Item -Path "components\ui\Skeleton.jsx" -ErrorAction SilentlyContinue
+
+# --- Step 4: fix every import path across the project ---
+$pairs = @(
+  @{ Old = "@/components/admin/RecentTransactionsTable"; New = "@/components/admin/dashboard/RecentTransactionsTable" }
+  @{ Old = "@/components/customer/RecommendedProducts"; New = "@/components/customer/product-details/RecommendedProducts" }
+  @{ Old = "@/components/admin/AdminDashboardOverview"; New = "@/components/admin/dashboard/AdminDashboardOverview" }
+  @{ Old = "@/components/seller/ProductMediaUploader"; New = "@/components/seller/products/ProductMediaUploader" }
+  @{ Old = "@/components/seller/OrderManagementView"; New = "@/components/seller/orders/OrderManagementView" }
+  @{ Old = "@/components/admin/ProductApprovalModal"; New = "@/components/admin/products/ProductApprovalModal" }
+  @{ Old = "@/components/customer/FlashSaleSection"; New = "@/components/customer/home/FlashSaleSection" }
+  @{ Old = "@/components/customer/AddressFormModal"; New = "@/components/customer/profile/AddressFormModal" }
+  @{ Old = "@/components/seller/PayoutHistoryTable"; New = "@/components/seller/payouts/PayoutHistoryTable" }
+  @{ Old = "@/components/seller/RequestPayoutModal"; New = "@/components/seller/payouts/RequestPayoutModal" }
+  @{ Old = "@/components/admin/ProductApprovalCard"; New = "@/components/admin/products/ProductApprovalCard" }
+  @{ Old = "@/components/admin/ProductApprovalView"; New = "@/components/admin/products/ProductApprovalView" }
+  @{ Old = "@/components/customer/ProductListCard"; New = "@/components/customer/products/ProductListCard" }
+  @{ Old = "@/components/customer/CheckoutStepper"; New = "@/components/customer/checkout/CheckoutStepper" }
+  @{ Old = "@/components/customer/CheckoutSummary"; New = "@/components/customer/checkout/CheckoutSummary" }
+  @{ Old = "@/components/customer/ProfileInfoForm"; New = "@/components/customer/profile/ProfileInfoForm" }
+  @{ Old = "@/components/seller/DashboardOverview"; New = "@/components/seller/dashboard/DashboardOverview" }
+  @{ Old = "@/components/seller/RecentOrdersTable"; New = "@/components/seller/dashboard/RecentOrdersTable" }
+  @{ Old = "@/components/seller/OrderStatusSelect"; New = "@/components/seller/orders/OrderStatusSelect" }
+  @{ Old = "@/components/seller/OrderDetailsModal"; New = "@/components/seller/orders/OrderDetailsModal" }
+  @{ Old = "@/components/admin/UserManagementView"; New = "@/components/admin/users/UserManagementView" }
+  @{ Old = "@/components/customer/ProductFilters"; New = "@/components/customer/products/ProductFilters" }
+  @{ Old = "@/components/customer/ProductGallery"; New = "@/components/customer/product-details/ProductGallery" }
+  @{ Old = "@/components/customer/ProfileSidebar"; New = "@/components/customer/profile/ProfileSidebar" }
+  @{ Old = "@/components/seller/ProductVariants"; New = "@/components/seller/products/ProductVariants" }
+  @{ Old = "@/components/admin/OrdersDonutChart"; New = "@/components/admin/dashboard/OrdersDonutChart" }
+  @{ Old = "@/components/admin/UserDetailsModal"; New = "@/components/admin/users/UserDetailsModal" }
+  @{ Old = "@/components/customer/CategoryGrid"; New = "@/components/customer/home/CategoryGrid" }
+  @{ Old = "@/components/customer/CheckoutView"; New = "@/components/customer/checkout/CheckoutView" }
+  @{ Old = "@/components/seller/MyProductsView"; New = "@/components/seller/products/MyProductsView" }
+  @{ Old = "@/components/admin/RevenueBarChart"; New = "@/components/admin/dashboard/RevenueBarChart" }
+  @{ Old = "@/components/customer/CategoryBar"; New = "@/components/customer/home/CategoryBar" }
+  @{ Old = "@/components/customer/ProductSort"; New = "@/components/customer/products/ProductSort" }
+  @{ Old = "@/components/customer/ProductInfo"; New = "@/components/customer/product-details/ProductInfo" }
+  @{ Old = "@/components/customer/ProductTabs"; New = "@/components/customer/product-details/ProductTabs" }
+  @{ Old = "@/components/customer/CartItemRow"; New = "@/components/customer/cart/CartItemRow" }
+  @{ Old = "@/components/customer/CartSummary"; New = "@/components/customer/cart/CartSummary" }
+  @{ Old = "@/components/customer/AddressCard"; New = "@/components/customer/profile/AddressCard" }
+  @{ Old = "@/components/customer/ProfileView"; New = "@/components/customer/profile/ProfileView" }
+  @{ Old = "@/components/seller/SellerSidebar"; New = "@/components/seller/layout/SellerSidebar" }
+  @{ Old = "@/components/seller/ProductsTable"; New = "@/components/seller/products/ProductsTable" }
+  @{ Old = "@/components/customer/HeroBanner"; New = "@/components/customer/home/HeroBanner" }
+  @{ Old = "@/components/customer/Pagination"; New = "@/components/customer/products/Pagination" }
+  @{ Old = "@/components/customer/ReviewCard"; New = "@/components/customer/product-details/ReviewCard" }
+  @{ Old = "@/components/customer/OrdersView"; New = "@/components/customer/orders/OrdersView" }
+  @{ Old = "@/components/seller/SellerTopbar"; New = "@/components/seller/layout/SellerTopbar" }
+  @{ Old = "@/components/customer/OrderCard"; New = "@/components/customer/orders/OrderCard" }
+  @{ Old = "@/components/seller/SellerShell"; New = "@/components/seller/layout/SellerShell" }
+  @{ Old = "@/components/seller/ProductForm"; New = "@/components/seller/products/ProductForm" }
+  @{ Old = "@/components/seller/OrdersTable"; New = "@/components/seller/orders/OrdersTable" }
+  @{ Old = "@/components/seller/PayoutsView"; New = "@/components/seller/payouts/PayoutsView" }
+  @{ Old = "@/components/admin/AdminSidebar"; New = "@/components/admin/layout/AdminSidebar" }
+  @{ Old = "@/components/customer/CartView"; New = "@/components/customer/cart/CartView" }
+  @{ Old = "@/components/seller/SalesChart"; New = "@/components/seller/dashboard/SalesChart" }
+  @{ Old = "@/components/admin/AdminTopbar"; New = "@/components/admin/layout/AdminTopbar" }
+  @{ Old = "@/constants/mockProductDetails"; New = "@/constants/customer/productDetails" }
+  @{ Old = "@/constants/mockSellerProducts"; New = "@/constants/seller/products" }
+  @{ Old = "@/components/admin/AdminShell"; New = "@/components/admin/layout/AdminShell" }
+  @{ Old = "@/components/admin/UsersTable"; New = "@/components/admin/users/UsersTable" }
+  @{ Old = "@/constants/mockSellerOrders"; New = "@/constants/seller/orders" }
+  @{ Old = "@/constants/mockAdminUsers"; New = "@/constants/admin/users" }
+  @{ Old = "@/store/sellerProductStore"; New = "@/store/productStore" }
+  @{ Old = "@/store/sellerPayoutStore"; New = "@/store/seller/payoutStore" }
+  @{ Old = "@/constants/mockProducts"; New = "@/constants/customer/products" }
+  @{ Old = "@/store/sellerOrderStore"; New = "@/store/seller/orderStore" }
+  @{ Old = "@/lib/sellerProductForm"; New = "@/lib/seller/productForm" }
+  @{ Old = "@/constants/mockProfile"; New = "@/constants/customer/profile" }
+  @{ Old = "@/constants/mockPayouts"; New = "@/constants/seller/payouts" }
+  @{ Old = "@/constants/mockOrders"; New = "@/constants/customer/orders" }
+  @{ Old = "@/constants/mockSeller"; New = "@/constants/seller/dashboard" }
+  @{ Old = "@/store/adminUserStore"; New = "@/store/admin/userStore" }
+  @{ Old = "@/constants/mockAdmin"; New = "@/constants/admin/dashboard" }
+  @{ Old = "@/lib/productDetails"; New = "@/lib/customer/productDetails" }
+  @{ Old = "@/lib/sellerProducts"; New = "@/lib/seller/products" }
+  @{ Old = "@/lib/adminDashboard"; New = "@/lib/admin/dashboard" }
+  @{ Old = "@/constants/mockData"; New = "@/constants/customer/home" }
+  @{ Old = "@/store/profileStore"; New = "@/store/customer/profileStore" }
+  @{ Old = "@/lib/adminProducts"; New = "@/lib/admin/products" }
+  @{ Old = "@/lib/productQuery"; New = "@/lib/customer/productQuery" }
+  @{ Old = "@/lib/sellerOrders"; New = "@/lib/seller/orders" }
+  @{ Old = "@/store/orderStore"; New = "@/store/customer/orderStore" }
+  @{ Old = "@/store/cartStore"; New = "@/store/customer/cartStore" }
+  @{ Old = "@/lib/adminUsers"; New = "@/lib/admin/users" }
+  @{ Old = "@/lib/checkout"; New = "@/lib/customer/checkout" }
+  @{ Old = "@/lib/products"; New = "@/lib/customer/products" }
+  @{ Old = "@/lib/profile"; New = "@/lib/customer/profile" }
+  @{ Old = "@/lib/payouts"; New = "@/lib/seller/payouts" }
+  @{ Old = "@/lib/orders"; New = "@/lib/customer/orders" }
+  @{ Old = "@/lib/cart"; New = "@/lib/customer/cart" }
+)
+
+$files = Get-ChildItem -Path "app","components","lib","store","constants" -Recurse -Include *.js,*.jsx -File
+foreach ($file in $files) {
+    $content = Get-Content -Path $file.FullName -Raw
+    $original = $content
+    foreach ($pair in $pairs) {
+        $content = $content -replace [regex]::Escape('"' + $pair.Old + '"'), ('"' + $pair.New + '"')
+    }
+    if ($content -ne $original) {
+        Set-Content -Path $file.FullName -Value $content -NoNewline
+        Write-Host "Updated:" $file.FullName
+    }
+}
+
+Write-Host "Done. Now run: Remove-Item -Recurse -Force .next ; npm run dev"
