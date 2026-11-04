@@ -2,16 +2,28 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Icon from "@/components/ui/Icon";
 import { toast } from "@/lib/toast";
 
+// each admin page gets a quick-action button that fits its own context
+const QUICK_ACTIONS = {
+    "/admin/users": { label: "Add User", icon: "person_add", onToast: "Adding users manually is coming soon" }
+};
+const DEFAULT_ACTION = { label: "Product Approvals", icon: "inventory_2", href: "/admin/products" };
+
 export default function AdminTopbar({ onMenuClick }) {
+    const pathname = usePathname();
     const [query, setQuery] = useState("");
 
     function handleSearch(e) {
         e.preventDefault();
         if (query.trim()) toast.info(`Searching "${query.trim()}" is coming soon`);
     }
+
+    const action =
+        Object.entries(QUICK_ACTIONS).find(([path]) => pathname.startsWith(path))?.[1] ||
+        (pathname.startsWith("/admin/products") ? null : DEFAULT_ACTION);
 
     return (
         <header className="fixed top-0 right-0 left-0 lg:left-64 h-[72px] bg-surface border-b border-outline-variant flex items-center justify-between px-margin-mobile md:px-margin-desktop z-30 gap-4">
@@ -51,13 +63,25 @@ export default function AdminTopbar({ onMenuClick }) {
                         <Icon name="help" />
                     </button>
                 </div>
-                <Link
-                    href="/admin/products"
-                    className="bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-bold px-4 sm:px-6 py-2 rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap"
-                >
-                    <Icon name="inventory_2" className="text-[20px]" />
-                    <span className="hidden sm:inline">Product Approvals</span>
-                </Link>
+                {action &&
+                    (action.href ? (
+                        <Link
+                            href={action.href}
+                            className="bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-bold px-4 sm:px-6 py-2 rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap"
+                        >
+                            <Icon name={action.icon} className="text-[20px]" />
+                            <span className="hidden sm:inline">{action.label}</span>
+                        </Link>
+                    ) : (
+                        <button
+                            type="button"
+                            onClick={() => toast.info(action.onToast)}
+                            className="bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-bold px-4 sm:px-6 py-2 rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap"
+                        >
+                            <Icon name={action.icon} className="text-[20px]" />
+                            <span className="hidden sm:inline">{action.label}</span>
+                        </button>
+                    ))}
             </div>
         </header>
     );
