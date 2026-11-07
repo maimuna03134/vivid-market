@@ -1,4 +1,4 @@
-import UserManagementView from "@/components/admin/UserManagementView";
+import UserManagementView from "@/components/admin/users/UserManagementView";
 
 export const metadata = { title: "User Management | Vivid Market" };
 

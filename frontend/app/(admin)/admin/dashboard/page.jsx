@@ -1,4 +1,4 @@
-import AdminDashboardOverview from "@/components/admin/AdminDashboardOverview";
+import AdminDashboardOverview from "@/components/admin/dashboard/AdminDashboardOverview";
 
 export const metadata = { title: "Admin Dashboard | Vivid Market" };
 

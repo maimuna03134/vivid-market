@@ -1,4 +1,4 @@
-import CheckoutView from "@/components/customer/CheckoutView";
+import CheckoutView from "@/components/customer/checkout/CheckoutView";
 
 export const metadata = { title: "Checkout | Vivid Market" };
 

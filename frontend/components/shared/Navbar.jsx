@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Icon from "@/components/ui/Icon";
-import { useCartStore, selectCartCount } from "@/store/cartStore";
+import { useCartStore, selectCartCount } from "@/store/customer/cartStore";
 
 export default function Navbar() {
   const router = useRouter();

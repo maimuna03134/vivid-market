@@ -1,4 +1,4 @@
-import ProductApprovalView from "@/components/admin/ProductApprovalView";
+import ProductApprovalView from "@/components/admin/products/ProductApprovalView";
 
 export const metadata = { title: "Product Approvals | Vivid Market" };
 

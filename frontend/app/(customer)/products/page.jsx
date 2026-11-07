@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Icon from "@/components/ui/Icon";
-import ProductFilters from "@/components/customer/ProductFilters";
-import ProductSort from "@/components/customer/ProductSort";
-import ProductListCard from "@/components/customer/ProductListCard";
-import Pagination from "@/components/customer/Pagination";
-import { parseFilters } from "@/lib/productQuery";
-import { getProducts } from "@/lib/products";
-import { categoryOptions } from "@/constants/mockProducts";
+import ProductFilters from "@/components/customer/products/ProductFilters";
+import ProductSort from "@/components/customer/products/ProductSort";
+import ProductListCard from "@/components/customer/products/ProductListCard";
+import Pagination from "@/components/customer/products/Pagination";
+import { parseFilters } from "@/lib/customer/productQuery";
+import { getProducts } from "@/lib/customer/products";
+import { categoryOptions } from "@/constants/customer/products";
 
 export const metadata = { title: "Products | Vivid Market" };
 

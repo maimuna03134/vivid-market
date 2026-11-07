@@ -1,7 +1,7 @@
 // Data layer for the products listing.
 // Right now it filters mock data. When the backend is ready, replace the body of
 // getProducts() with a fetch to  `${process.env.NEXT_PUBLIC_API_URL}/products${buildQuery(filters)}`.
-import { allProducts } from "@/constants/mockProducts";
+import { allProducts } from "@/constants/customer/products";
 
 export const PAGE_SIZE = 8;
 

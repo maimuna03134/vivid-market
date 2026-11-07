@@ -1,9 +1,9 @@
-import CategoryBar from "@/components/customer/CategoryBar";
-import HeroBanner from "@/components/customer/HeroBanner";
-import FlashSaleSection from "@/components/customer/FlashSaleSection";
-import CategoryGrid from "@/components/customer/CategoryGrid";
+import CategoryBar from "@/components/customer/home/CategoryBar";
+import HeroBanner from "@/components/customer/home/HeroBanner";
+import FlashSaleSection from "@/components/customer/home/FlashSaleSection";
+import CategoryGrid from "@/components/customer/home/CategoryGrid";
 import ProductCard from "@/components/shared/ProductCard";
-import { featuredProducts } from "@/constants/mockData";
+import { featuredProducts } from "@/constants/customer/home";
 
 export default function CustomerHomePage() {
   return (

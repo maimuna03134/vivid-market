@@ -1,4 +1,4 @@
-import CartView from "@/components/customer/CartView";
+import CartView from "@/components/customer/cart/CartView";
 
 export const metadata = { title: "Shopping Cart | Vivid Market" };
 

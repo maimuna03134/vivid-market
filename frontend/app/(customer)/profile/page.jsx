@@ -1,4 +1,4 @@
-import ProfileView from "@/components/customer/ProfileView";
+import ProfileView from "@/components/customer/profile/ProfileView";
 
 export const metadata = { title: "My Profile | Vivid Market" };
 

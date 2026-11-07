@@ -1,4 +1,4 @@
-import DashboardOverview from "@/components/seller/DashboardOverview";
+import DashboardOverview from "@/components/seller/dashboard/DashboardOverview";
 
 export const metadata = { title: "Seller Dashboard | Vivid Market" };
 

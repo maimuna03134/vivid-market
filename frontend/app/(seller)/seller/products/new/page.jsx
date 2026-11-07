@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import ProductForm from "@/components/seller/ProductForm";
+import ProductForm from "@/components/seller/products/ProductForm";
 
 export const metadata = { title: "Add Product | Vivid Market" };
 

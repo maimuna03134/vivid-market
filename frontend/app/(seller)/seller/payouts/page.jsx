@@ -1,4 +1,4 @@
-import PayoutsView from "@/components/seller/PayoutsView";
+import PayoutsView from "@/components/seller/payouts/PayoutsView";
 
 export const metadata = { title: "Payouts | Vivid Market" };
 

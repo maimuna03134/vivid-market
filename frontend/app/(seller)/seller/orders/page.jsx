@@ -1,4 +1,4 @@
-import OrderManagementView from "@/components/seller/OrderManagementView";
+import OrderManagementView from "@/components/seller/orders/OrderManagementView";
 
 export const metadata = { title: "Order Management | Vivid Market" };
 

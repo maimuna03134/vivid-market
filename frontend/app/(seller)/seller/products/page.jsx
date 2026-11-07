@@ -1,4 +1,4 @@
-import MyProductsView from "@/components/seller/MyProductsView";
+import MyProductsView from "@/components/seller/products/MyProductsView";
 
 export const metadata = { title: "My Products | Vivid Market" };
 

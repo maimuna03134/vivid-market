@@ -1,4 +1,4 @@
-import OrdersView from "@/components/customer/OrdersView";
+import OrdersView from "@/components/customer/orders/OrdersView";
 
 export const metadata = { title: "My Orders | Vivid Market" };
 
